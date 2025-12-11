@@ -24,6 +24,17 @@ object wallService{
         }
     }
 
+    fun likeById(id: Int){
+        for ((index, post) in posts.withIndex()){
+            if (post.id == id){
+               posts[index] =  post.copy( likes = post.likes + 1)
+                println("-----тут-----")
+                println(posts[index])
+            }
+            // получил не понятно  как записать в новый пост
+        }
+    }
+
 }
 
 
@@ -39,6 +50,11 @@ fun main() {
     wallService.addPost(post1)
     wallService.addPost(post2)
     wallService.printPosts()
+    println()
+    wallService.likeById(2)
+    println()
+    println("-----------print post--------------")
+    println(post2)
 
 
 
